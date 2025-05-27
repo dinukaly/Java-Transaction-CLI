@@ -1,0 +1,37 @@
+package dto;
+
+public class BookDTO {
+    private int bookId;
+    private String title;
+    private int availableQty;
+
+    public BookDTO(int bookId, String title, int availableQty) {
+        this.bookId = bookId;
+        this.title = title;
+        this.availableQty = availableQty;
+    }
+
+    public int getBookId() {
+        return bookId;
+    }
+
+    public void setBookId(int bookId) {
+        this.bookId = bookId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public int getAvailableQty() {
+        return availableQty;
+    }
+
+    public void setAvailableQty(int availableQty) {
+        this.availableQty = availableQty;
+    }
+}

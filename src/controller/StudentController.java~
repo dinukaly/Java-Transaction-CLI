@@ -1,0 +1,27 @@
+package controller;
+
+import dto.StudentDTO;
+import model.StudentModel;
+
+public class StudentController {
+    StudentModel studentModel = new StudentModel();
+
+    public Boolean addNewStudent(StudentDTO studentDTO) {
+       Boolean resp = studentModel.saveStudent(studentDTO);
+        return resp;
+    }
+
+    public Boolean deleteStudent(int studentId) {
+        Boolean resp = studentModel.deleteStudent(studentId);
+        return resp;
+    }
+
+    public StudentDTO searchStudent(int studentId) {
+        StudentDTO dto = studentModel.searchStudent(studentId);
+        return dto;
+    }
+
+    public boolean updateStudent(int studentId, String updatedName) {
+        return studentModel.updateStudent(studentId, updatedName);
+    }
+}

@@ -1,0 +1,65 @@
+package controller;
+
+import view.BookView;
+import view.StudentView;
+
+import java.sql.SQLException;
+import java.util.Scanner;
+
+public class MainMenuController {
+    static Scanner scanner = new Scanner(System.in);
+    static StudentView studentView = new StudentView();
+    static BookView bookView= new BookView();
+    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        System.out.println("Welcome to the library");
+
+        while (true) {
+            System.out.println("\nChoose option to continue:");
+            System.out.println("1. Student Management");
+            System.out.println("2. Book Management");
+            System.out.println("0. Exit");
+            int userInput = scanner.nextInt();
+
+            if (userInput == 1) {
+                System.out.println("\nStudent Management");
+                System.out.println("1. Add Student");
+                System.out.println("2. Search Student");
+                System.out.println("3. Update Student");
+                System.out.println("4. Delete Student");
+                System.out.println("0. Back");
+                int studentOption = scanner.nextInt();
+
+                switch (studentOption) {
+                    case 1 -> studentView.addStudent();
+                    case 2 -> studentView.searchStudent();
+                    case 3 -> studentView.updateStudent();
+                    case 4 -> studentView.deleteStudent();
+                }
+            } else if (userInput == 2) {
+                System.out.println("\nBook Management");
+                System.out.println("1. Add Book");
+                System.out.println("2. Search Book");
+                System.out.println("3. Update Book");
+                System.out.println("4. Delete Book");
+                System.out.println("5. Borrow Book");
+                System.out.println("6. Return Book");
+                System.out.println("0. Back");
+                int bookOption = scanner.nextInt();
+
+                switch (bookOption) {
+                    case 1 -> bookView.addBook();
+                    case 2 -> bookView.searchBook();
+                    case 3 -> bookView.updateBook();
+                    case 4 -> bookView.deleteBook();
+                    case 5 -> bookView.borrowBook();
+                    case 6 -> bookView.returnBook();
+                }
+            } else if (userInput == 0) {
+                System.out.println("bye bye come again!");
+                break;
+            } else {
+                System.out.println("invalid option please try again!!");
+            }
+        }
+    }
+}
